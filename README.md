@@ -8,7 +8,7 @@ Online Store with employees management.
 
 For running this project it will be necesary to **download and install** the following things:
 
-  1. [Python 3.8 32-bit](https://www.python.org/downloads/).
+  1. [Python 3.6 32-bit](https://www.python.org/downloads/).
   2. [PostgreSQL](https://www.postgresql.org/download/).
   3. [Git](https://git-scm.com/download/win).
   4. [Pip](https://www.neoguias.com/como-instalar-pip-python/#Como_instalar_PIP_en_Windows).
