@@ -41,6 +41,7 @@ DJANGO_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
+    'oauth2_provider',
 ]
 LOCAL_APPS = [
     'adroit.users.apps.UsersAppConfig',
