@@ -1,6 +1,6 @@
 """ Django models utilities """
 
-#Django
+# Django
 from django.db import models
 
 class AdroitModel(models.Model):
