@@ -24,7 +24,6 @@ For running this project it will be necesary to **download and install** the fol
 Make sure that **enviroment variables** are created. If not:
 
   8. Create the following files in `[root_directory]/.envs/.local/`: `.django` and `.postgres`.
-
   9. Declare the variables.
 
     .django:
@@ -43,7 +42,6 @@ Make sure that **enviroment variables** are created. If not:
 **Launch Docker**. You don't need to use docker commands because it's automated in `bash/` directory.
 
   10. Build the images with `$ source bash/build.sh`.
-
   11. Set up the processes with `$ source bash/up.sh`.
 
 
@@ -51,3 +49,16 @@ Next, you have to **create a superuser**:
 
   12. `$ source bash/django/createsuperuser.sh`.
 
+
+## Work with django in an isolated terminal
+
+  When you start your Docker container, the processes will be running in the same terminal.
+  It's more confortable when you work with django in an isolated terminal so you can easily see
+  the exceptions, and other messagges. Also you can kill and run Django whenever you want.
+  
+  Every time you start a container, open another terminal and run the follow commands.
+
+  1. `$ export COMPOSE_FILE=local.yml`.
+  2. `$ sudo docker-compose ps`. With this you are going to see a list of processes running in the container.
+  3. Choose the name of Django process (example: adroit_django_2jk4123k) and run `$ sudo docker rm -f adroit_django_2jk4123k`.
+  4. After that, run django `$ source bash/django/run.sh`
