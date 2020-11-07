@@ -1,18 +1,24 @@
 """User models."""
 
+
+
 # Django
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 # Utilities
 from utils.models import AdroitModel
-
+'''
 class User(AdroitModel, AbstractUser):
     """ User models.
 
     Extend from Django's Abstract User, change the username field
     to email and add some extra fields.
     """
+
+    # El manejo de los roles, usuarios y perfiles aun no
+    # está totalmente determinado.
+
 
     email = models.EmailField(
         'email adress',
@@ -53,3 +59,4 @@ class User(AdroitModel, AbstractUser):
     def get_short_name(self):
         """Return username."""
         return self.username
+'''

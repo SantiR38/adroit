@@ -3,7 +3,7 @@
 #Django
 from django.apps import AppConfig
 
-class UserAppConfig(AppConfig):
+class UsersAppConfig(AppConfig):
     """Users app config. """
 
     name = 'adroit.users'
