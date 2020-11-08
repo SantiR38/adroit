@@ -62,3 +62,13 @@ Next, you have to **create a superuser**:
   2. `$ sudo docker-compose ps`. With this you are going to see a list of processes running in the container.
   3. Choose the name of Django process (example: adroit_django_2jk4123k) and run `$ sudo docker rm -f adroit_django_2jk4123k`.
   4. After that, run django `$ source bash/django/run.sh`
+
+## Renew all the migration (only before production)
+
+  A good practice is to have only one migration file when you deploy your project.
+  You can do this following the next steps:
+
+  1. Put down the compose: `source bash/down.sh`.
+  2. Remove postgres volume: `source bash/remove_postgres.sh`.
+  3. Create migrations: `source bash/django/makemigrations.sh` and `source bash/django/migrate.sh`.
+  4. Build again the compose: `$ source bash/build.sh`.
