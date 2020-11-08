@@ -1,0 +1,16 @@
+# Oauth
+
+# NAME=web-app
+# TYPE=Confidential
+# AUTH_GRANT_TYPE=Autorization code
+# REDIRECT_URL=http://127.0.0.1:8000/noexist/callback
+
+export ID=sNbTNG3b3AJrJMdXZ2D6uY0htqapaKH7uUGCDKBZ
+export SECRET=pJ9IdfBMvV92xh3N6X8jAqsa342rrxf9NrJ8UBr9jaFqvSQbu8r2WlvWXKVicFQ1PzBgLLqbrfsjganiQtpoIMhajVk8UeYpPRmD0t9RjBtz0M6WB6gOsDC9dSZMG7v1
+export CREDENTIAL=c05iVE5HM2IzQUpySk1kWFoyRDZ1WTBodHFhcGFLSDd1VUdDREtCWjpwSjlJZGZCTXZWOTJ4aDNONlg4akFxc2EzNDJycnhmOU5ySjhVQnI5amFGcXZTUWJ1OHIyV2x2V1hLVmljRlExUHpCZ0xMcWJyZnNqZ2FuaVF0cG9JTWhhalZrOFVlWXBQUm1EMHQ5UmpCdHowTTZXQjZnT3NEQzlkU1pNRzd2MQ==
+
+# Start the Authorization code flow
+
+# http://127.0.0.1:8000/o/authorize/?response_type=code&client_id=sNbTNG3b3AJrJMdXZ2D6uY0htqapaKH7uUGCDKBZ&redirect_uri=http://127.0.0.1:8000/noexist/callback
+
+export CODE=OB4V9Q7FHZK1pPKpyQTUhkEgf2epIB

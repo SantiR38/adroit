@@ -42,6 +42,7 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = [
     'oauth2_provider',
+    'corsheaders',
 ]
 LOCAL_APPS = [
     'adroit.users',
@@ -71,6 +72,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Authentication
+LOGIN_URL='/admin/login/'
+CORS_ORIGIN_ALLOW_ALL = True
+
 # Authorization
 AUTH_USER_MODEL='users.User'
 
@@ -78,6 +83,7 @@ AUTH_USER_MODEL='users.User'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
