@@ -1,24 +1,25 @@
 """User models."""
 
-
-
 # Django
+from django.core.validators import RegexValidator
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 # Utilities
-from utils.models import AdroitModel
-'''
-class User(AdroitModel, AbstractUser):
-    """ User models.
+from adroit.utils.models import AdroitModel
+
+
+class User(AbstractUser):
+    """User models.
 
     Extend from Django's Abstract User, change the username field
     to email and add some extra fields.
+
+    We do not inherit from abstract class AdroitModel because we don't need those fields.
     """
 
     # El manejo de los roles, usuarios y perfiles aun no
     # está totalmente determinado.
-
 
     email = models.EmailField(
         'email adress',
@@ -52,6 +53,8 @@ class User(AdroitModel, AbstractUser):
         help_text='Set to true when the user have verified its email address.'
     )
 
+    role_id = models.ForeignKey('Role', on_delete=models.SET_NULL, null=True)
+
     def __str__(self):
         """Return username"""
         return self.username
@@ -59,4 +62,8 @@ class User(AdroitModel, AbstractUser):
     def get_short_name(self):
         """Return username."""
         return self.username
-'''
+
+
+class Role(AdroitModel):
+    type = models.CharField(max_length=50, unique=True)
+

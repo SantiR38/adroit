@@ -7,4 +7,4 @@ class UsersAppConfig(AppConfig):
     """Users app config. """
 
     name = 'adroit.users'
-    verbose_name = 'Users'
+    verbose_name = 'users'

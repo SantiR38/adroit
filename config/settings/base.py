@@ -44,7 +44,7 @@ THIRD_PARTY_APPS = [
     'oauth2_provider',
 ]
 LOCAL_APPS = [
-    'adroit.users.apps.UsersAppConfig',
+    'adroit.users',
 ]
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
@@ -70,6 +70,9 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+# Authorization
+AUTH_USER_MODEL='users.User'
 
 # Middlewares
 MIDDLEWARE = [
