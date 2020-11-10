@@ -43,3 +43,15 @@ class Color(AdroitModel):
     code = models.CharField(max_length=20)
     avaliable = models.BooleanField(default=False)
     product_id = models.ForeignKey('products.Product', on_delete=models.SET_NULL, null=True)
+
+class Image(AdroitModel):
+    """Image model.
+
+    Every product is going to have at least one image to show,
+    and only one is going to be featured.
+    These are in '/media' directory, so we need a url field to search it. 
+    """
+
+    path = models.URLField()
+    is_first = models.BooleanField(default=False)
+    product_id = models.ForeignKey('products.Product', on_delete=models.SET_NULL, null=True)
