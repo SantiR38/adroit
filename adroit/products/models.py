@@ -29,3 +29,17 @@ class Product(AdroitModel):
     stock = models.IntegerField(verbose_name="Cantidad")
     stock_alarm = models.IntegerField(verbose_name="Stock minimo permitido", null=True)
     #branch_id = models.ForeignKey('Branch', on_delete=models.SET_NULL, null=True)
+
+
+class Color(AdroitModel):
+    """Color model.
+
+    Every product is going to have featured colors.
+    These are going to be saved with an hexadecimal 
+    code, and are going to have a one-to-many 
+    relationship with Product model.
+    """
+
+    code = models.CharField(max_length=20)
+    avaliable = models.BooleanField(default=False)
+    product_id = models.ForeignKey('products.Product', on_delete=models.SET_NULL, null=True)
