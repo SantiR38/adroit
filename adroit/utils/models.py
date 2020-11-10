@@ -32,7 +32,7 @@ class AdroitModel(models.Model):
         ordering = ['-created', '-modified']
 
 
-class State(models.Model):
+class State(AdroitModel):
     """State model.
 
     This model contains all the states of every product, sale, branch, etc.
@@ -41,6 +41,8 @@ class State(models.Model):
         + Active
         + Inactive
         + Deleted
+        + Featured
+        + Best Seller
     """
 
     name = models.CharField(max_length=50)
