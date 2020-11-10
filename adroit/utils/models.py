@@ -30,3 +30,18 @@ class AdroitModel(models.Model):
         abstract = True # This means that has not be migrated as a table in the database
         get_latest_by = 'created'
         ordering = ['-created', '-modified']
+
+
+class State(models.Model):
+    """State model.
+
+    This model contains all the states of every product, sale, branch, etc.
+    The other tables are linked with these by foreign key(state_id field).
+    Necesary states:
+        + Active
+        + Inactive
+        + Deleted
+    """
+
+    name = models.CharField(max_length=50)
+
