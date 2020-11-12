@@ -51,6 +51,7 @@ LOCAL_APPS = [
     'adroit.utils',
     'adroit.branches',
     'adroit.sales',
+    'adroit.sendings',
 ]
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
