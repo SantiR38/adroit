@@ -26,3 +26,17 @@ class Invoice(AdroitModel):
     #client_id = models.ForeignKey('users.User', on_delete=models.SET_NULL, null=True)
     #seller_id = models.ForeignKey('users.User', on_delete=models.SET_NULL, null=True)
     branch_id = models.ForeignKey('branches.Branch', on_delete=models.SET_NULL, null=True)
+
+
+class InvoiceDetail(AdroitModel):
+    """Invoice Detail model.
+    
+    Here you register every item of a sale.
+    """
+
+    invoice_id = models.ForeignKey('sales.Invoice', on_delete=models.CASCADE)
+    unit_cost = models.DecimalField(max_digits=10, decimal_places=2)
+    unit_price = models.DecimalField(max_digits=10, decimal_places=2)
+    discount = models.DecimalField(max_digits=10, decimal_places=2)
+    quantity = models.DecimalField(max_digits=10, decimal_places=2)
+    product_id = models.ForeignKey('products.Product', on_delete=models.SET_NULL, null=True)
