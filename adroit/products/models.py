@@ -28,7 +28,7 @@ class Product(AdroitModel):
     state_id = models.ForeignKey('utils.State', on_delete=models.SET_NULL, null=True)
     stock = models.IntegerField(verbose_name="Cantidad")
     stock_alarm = models.IntegerField(verbose_name="Stock minimo permitido", null=True)
-    #branch_id = models.ForeignKey('Branch', on_delete=models.SET_NULL, null=True)
+    branch_id = models.ForeignKey('branches.Branch', on_delete=models.SET_NULL, null=True)
 
 
 class Color(AdroitModel):

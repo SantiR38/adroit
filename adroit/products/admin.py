@@ -20,7 +20,7 @@ class ProductAdmin(admin.ModelAdmin):
 
     list_display = ('code', 'name', 'cost', 'profit_percent',
                     'precio', 'descount_percent', 'section',
-                    'brand', 'stock', 'stock_alarm',)
+                    'brand', 'stock', 'stock_alarm', 'branch_id',)
 
 @admin.register(Image)
 class ImageAdmin(admin.ModelAdmin):
