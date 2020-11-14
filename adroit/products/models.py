@@ -25,6 +25,7 @@ class Product(AdroitModel):
     section = models.CharField(max_length=100, blank=True) # blank=True hace que el valor vacio no se guarde como None, sino como ''.
     brand = models.CharField(max_length=100, blank=True)
     description = models.TextField(blank=True)
+    # Cambiar a many to many
     state_id = models.ForeignKey('utils.State', on_delete=models.SET_NULL, null=True)
     stock = models.IntegerField(verbose_name="Cantidad")
     stock_alarm = models.IntegerField(verbose_name="Stock minimo permitido", null=True)

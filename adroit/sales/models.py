@@ -23,8 +23,7 @@ class Invoice(AdroitModel):
     total_discounted = models.DecimalField(max_digits=10, decimal_places=2)
     sending_id = models.OneToOneField('sendings.Sending', on_delete=models.SET_NULL, null=True)
     total = models.DecimalField(max_digits=10, decimal_places=2)
-    #client_id = models.ForeignKey('users.User', on_delete=models.SET_NULL, null=True)
-    #seller_id = models.ForeignKey('users.User', on_delete=models.SET_NULL, null=True)
+    user_id = models.ManyToManyField('users.User')
     branch_id = models.ForeignKey('branches.Branch', on_delete=models.SET_NULL, null=True)
 
 
@@ -33,7 +32,7 @@ class InvoiceDetail(AdroitModel):
     
     Here you register every item of a sale.
     """
-
+    # Poner state_id
     invoice_id = models.ForeignKey('sales.Invoice', on_delete=models.CASCADE)
     unit_cost = models.DecimalField(max_digits=10, decimal_places=2)
     unit_price = models.DecimalField(max_digits=10, decimal_places=2)
