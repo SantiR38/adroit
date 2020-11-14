@@ -24,4 +24,3 @@ class Sending(AdroitModel):
     distance = models.CharField(max_length=25)
     going_time = models.DateTimeField()
     arrival_time = models.DateTimeField(null=True)
-    state_id = models.ForeignKey('utils.State', on_delete=models.SET_NULL, null=True)

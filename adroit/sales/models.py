@@ -16,7 +16,6 @@ class Invoice(AdroitModel):
     a foreign key. 
     """
 
-    state_id = models.ForeignKey('utils.state', on_delete=models.SET_NULL, null=True)
     payment_method = models.CharField(max_length=50, default="Cash") # In the forms is going to be an option field
     subtotal = models.DecimalField(max_digits=10, decimal_places=2)
     discount = models.DecimalField(max_digits=10, decimal_places=2, default=0)
@@ -32,7 +31,7 @@ class InvoiceDetail(AdroitModel):
     
     Here you register every item of a sale.
     """
-    # Poner state_id
+
     invoice_id = models.ForeignKey('sales.Invoice', on_delete=models.CASCADE)
     unit_cost = models.DecimalField(max_digits=10, decimal_places=2)
     unit_price = models.DecimalField(max_digits=10, decimal_places=2)

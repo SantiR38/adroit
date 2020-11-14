@@ -70,5 +70,6 @@ Next, you have to **create a superuser**:
 
   1. Put down the compose: `source bash/down.sh`.
   2. Remove postgres volume: `source bash/remove_postgres.sh`.
-  3. Create migrations: `source bash/django/makemigrations.sh` and `source bash/django/migrate.sh`.
-  4. Run again the compose: `$ source bash/up.sh`.
+  3. Delete all the migrations files in each app.
+  4. Create migrations: `source bash/django/makemigrations.sh` and `source bash/django/migrate.sh`.
+  5. Run again the compose: `$ source bash/up.sh`.

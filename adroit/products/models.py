@@ -15,7 +15,6 @@ class Product(AdroitModel):
          883424-b for branch b
     """
 
-    code = models.CharField(max_length=20, unique=True)
     name = models.CharField(max_length=100)
     cost = models.DecimalField(max_digits=10, decimal_places=2)
     profit_percent = models.DecimalField(max_digits=10, decimal_places=2, null=True)
@@ -25,8 +24,6 @@ class Product(AdroitModel):
     section = models.CharField(max_length=100, blank=True) # blank=True hace que el valor vacio no se guarde como None, sino como ''.
     brand = models.CharField(max_length=100, blank=True)
     description = models.TextField(blank=True)
-    # Cambiar a many to many
-    state_id = models.ForeignKey('utils.State', on_delete=models.SET_NULL, null=True)
     stock = models.IntegerField(verbose_name="Cantidad")
     stock_alarm = models.IntegerField(verbose_name="Stock minimo permitido", null=True)
     branch_id = models.ForeignKey('branches.Branch', on_delete=models.SET_NULL, null=True)
@@ -40,8 +37,7 @@ class Color(AdroitModel):
     code, and are going to have a one-to-many 
     relationship with Product model.
     """
-
-    code = models.CharField(max_length=20)
+    
     avaliable = models.BooleanField(default=False)
     product_id = models.ForeignKey('products.Product', on_delete=models.SET_NULL, null=True)
 

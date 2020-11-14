@@ -10,8 +10,7 @@ from adroit.sales.models import Invoice, InvoiceDetail
 class InvoiceAdmin(admin.ModelAdmin):
     """Invoice model admin."""
 
-    list_display = ('state_id', 
-                    'payment_method',
+    list_display = ('payment_method',
                     'subtotal', 'discount',
                     'total_discounted',
                     'total',

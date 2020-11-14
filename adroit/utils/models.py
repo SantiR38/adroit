@@ -10,9 +10,10 @@ class AdroitModel(models.Model):
     other model in the project will inherit. This class provides
     every table with the following attributes:
         + created (DateTime): Store the datetime the object was created.
-        +modified (DateTime): Store the last datetime the object was modified.
+        + modified (DateTime): Store the last datetime the object was modified.
     """
-
+    code = models.CharField(max_length=20, unique=True, blank=True)
+    state_id = models.ManyToManyField('utils.State')
     created = models.DateTimeField(
         'created at',
         auto_now_add=True,
@@ -32,11 +33,11 @@ class AdroitModel(models.Model):
         ordering = ['-created', '-modified']
 
 
-class State(AdroitModel):
+class State(models.Model):
     """State model.
 
     This model contains all the states of every product, sale, branch, etc.
-    The other tables are linked with these by foreign key(state_id field).
+    The abstract class AdroitModel is linked with these by many-to-many field(state_id field).
     Necesary states:
         + Active
         + Inactive

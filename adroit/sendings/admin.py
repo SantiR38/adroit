@@ -17,8 +17,7 @@ class SendingAdmin(admin.ModelAdmin):
                     'branch_id',
                     'distance',
                     'going_time',
-                    'arrival_time',
-                    'state_id',)
+                    'arrival_time',)
 
     search_fields = ('user_id__first_name', 
                      'user_id__last_name',

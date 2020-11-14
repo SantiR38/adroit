@@ -17,7 +17,6 @@ class Branch(AdroitModel):
     with employees and delivery management.
     """
 
-    code = models.CharField(max_length=10)
     name = models.CharField(max_length=50, blank=True)
     latitude = models.CharField(max_length=25)
     longitude = models.CharField(max_length=25)
