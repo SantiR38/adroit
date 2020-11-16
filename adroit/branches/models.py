@@ -20,7 +20,7 @@ class Branch(AdroitModel):
     name = models.CharField(max_length=50, blank=True)
     latitude = models.CharField(max_length=25)
     longitude = models.CharField(max_length=25)
-    adress = models.CharField(max_length=50)
+    address = models.CharField(max_length=50)
     city = models.CharField(max_length=50)
     state = models.CharField(max_length=50)
     country = models.CharField(max_length=50)

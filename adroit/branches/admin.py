@@ -10,7 +10,7 @@ from adroit.branches.models import Branch
 class BranchAdmin(admin.ModelAdmin):
     """Branch model admin."""
 
-    list_display = ('code', 'name', 'latitude', 'longitude', 'adress', 'city', 'state', 'country',)
+    list_display = ('code', 'name', 'latitude', 'longitude', 'address', 'city', 'state', 'country',)
     search_fields = ('name', 'latitude', 'longitude', 'adress', 'city', 'state', 'country',)
     list_filter = ('state', 'country',)
 
