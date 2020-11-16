@@ -39,5 +39,6 @@ urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
     path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     path('users/', include(('adroit.users.urls', 'users'), namespace='users')),
+    path('branches/', include(('adroit.branches.urls', 'branches'), namespace='branches')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
