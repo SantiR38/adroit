@@ -7,6 +7,7 @@ from rest_framework import authentication, permissions
 
 # Utilities
 from adroit.branches.models import Branch
+from .serializers import BranchSerializer
 
 
 #---------- Views ----------#
@@ -25,19 +26,13 @@ class ListBranches(APIView):
         """
         Return a list of all users.
         """
-        branches = {}
-        i = 1
-        for branch in Branch.objects.all():
-            branches['branch'+str(i)] = {
-                'code': branch.code,
-                'state_id': branch.state_id.name,
-                'latitude': branch.latitude,
-                'longitude': branch.longitude,
-                'longitude': branch.longitude,
-                'address': branch.address,
-                'city': branch.city,
-                'state': branch.state,
-                'country': branch.country
-            }
-            i += 1
-        return Response(branches)
+
+        branch = Branch.objects.all()
+        serializer = BranchSerializer(branch, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, *args, **kwargs):
+        serializer = BranchSerializer(data= request.data)
+        serializer.is_valid(raise_exception=True)
+        data = serializer.data
+        return Response(data)
